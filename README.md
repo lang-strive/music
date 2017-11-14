@@ -64,7 +64,7 @@ cnpm i webpack-merge -D
 html-webpack-plugin:(生成html模板)
 cnpm i html-webpack-plugin -D
 
-scss:(只需安装scss模块，不需要在webpack.config里配置，在Vuejs用的时候直接 在styles上加一个lang="scss")
+sass:(先安装sass模块，需要在webpack.config里配置，在Vuejs用的时候直接 在styles上加一个lang="sass")
 cnpm i node-sass -D
 cnpm i sass-loader -D
 
@@ -83,7 +83,7 @@ css-loader:
 		]
 	}
 
-css-loader(用插件合并文件):
+css-loader (用插件合并文件):
 var ExtractTextPlugin=require('extract-text-webpack-plugin');
 module:{
 		loaders:[
@@ -99,6 +99,26 @@ module:{
 plugins:[
 new ExtractTextPlugin('bundle.css')
 ]
+
+vue中css-loader/sass-loader (用插件合并文件):
+{
+	test:/\.vue$/,
+	loader:'vue-loader',
+	options:{
+		loaders:{
+			css:ExtractTextPlugin.extract({
+				use:'css-loader',
+				fallback:'vue-style-loader'
+			}),
+			sass:ExtractTextPlugin.extract({
+				use:['css-loader','sass-loader'],
+				fallback:'vue-style-loader'
+			})
+		}
+	}
+}
+
+
 
 插件plugins:
 plugins:[
@@ -133,11 +153,13 @@ module.exports=config;
 2).(打包路径为dist文件)
       var path=require('path');
 var config={
-	entry:"./entry.js",
+	entry:{
+		main:"./main.js"
+	},
 	output:{
 		path:path.join(__dirname,'./dist'),
-		publicPath:'/dist',
-		filename:'bundle.js'
+		publicPath:'/dist/',
+		filename:'main.js'
 	}
 }
 module.exports=config;

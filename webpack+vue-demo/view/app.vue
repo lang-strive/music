@@ -10,11 +10,11 @@
         }
     }
 </script>
-<style scoped lang="scss">
+<style scoped lang="sass">
     div{
         color:green;
         p{
-            color:red;
+            color:#f60;
         }
     }
 </style>

@@ -3,11 +3,11 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
-    entry: "./entry.js",
+    entry: "./main.js",
     output: {
         path: path.join(__dirname, './dist'),
         publicPath: '/dist/',
-        filename: 'bundle.js'
+        filename: 'main.js'
     },
     module: {
         loaders: [{
@@ -18,7 +18,11 @@ var config = {
                         css: ExtractTextPlugin.extract({
                             use: 'css-loader',
                             fallback: 'vue-style-loader'
-                        })
+                        }),
+                        sass: ExtractTextPlugin.extract({
+                            use: ['css-loader', 'sass-loader'],
+                            fallback: 'vue-style-loader'
+                        }),
                     }
                 }
             },
@@ -43,7 +47,7 @@ var config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('bundle.css')
+        new ExtractTextPlugin('main.css')
     ]
 }
 module.exports = config;
