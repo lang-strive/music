@@ -119,6 +119,12 @@ vue中css-loader/sass-loader (用插件合并文件):
 }
 
 
+加载静态资源(小于1024用base64加载):
+{
+	test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+	loader:'url-loader?limit=1024'
+}
+
 
 插件plugins:
 plugins:[
