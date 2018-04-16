@@ -192,7 +192,7 @@ webpack --progress --hide-modules
 
 ## 配置:
 ``` bash
-1). 
+> 1). 
       var config={
 	entry:"./entry.js",
 	output:{
