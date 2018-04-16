@@ -18,21 +18,24 @@ npm run build
 # webpack-config.js讲解: http://blog.csdn.net/u011649976/article/details/76736173
 
 
-npm:
+## npm:
 ``` bash
 cnpm install webpack --save-dev		只写进开发依赖里面  	  相当于 -D
 cnpm install webpack --save			写进依赖里面,开发和上线都可以用
 cnpm install webpack-dev-server --save-dev	  开一个服务,并写进开发依赖
 ```
 
-package.json:
+## package.json:
+``` bash
 生成:npm init
 运行:npm run dev
 "dev":"webpack-dev-server --host localhost --port 8088 --open --config webpack.config.js"
 运行:npm run build
 "build":"webpack --progress --hide-modules --config webpack.prod.config.js"
+```
 
-下载loader:
+## 下载loader:
+``` bash
 css-loader:
 cnpm i style-loader css-loader -D 	
 合并css插件:
@@ -47,9 +50,11 @@ vue-template-compiler:(编译template)
 cnpm i vue-template-compiler -D
 vue-hot-reload-api:(热加载)
 cnpm i vue-hot-reload-api -D
+```
 
-ES6转换ES5
-babel:
+## ES6转换ES5
+> babel:
+``` bash
 cnpm i babel -D
 babel-loader:
 cnpm i babel-loader -D
@@ -61,6 +66,7 @@ babel-preset-es2015:
 cnpm i babel-preset-es2015 -D
 babel-runtime:
 cnpm i babel-runtime -D
+```
 
 babel下载:
 cnpm install babel babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime babel-runtime -D
