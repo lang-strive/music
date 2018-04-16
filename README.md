@@ -87,18 +87,24 @@ cnpm i webpack -D
 cnpm i webpack-dev-server -D
 ```
 
-webpack-merge:(两个配置文件合并为一个)
+## webpack-merge:(两个配置文件合并为一个)
+``` bash
 cnpm i webpack-merge -D
+```
 
-html-webpack-plugin:(生成html模板)
+## html-webpack-plugin:(生成html模板)
+``` bash
 cnpm i html-webpack-plugin -D
+```
 
-sass:(先安装sass模块，需要在webpack.config里配置，在Vuejs用的时候直接 在styles上加一个lang="sass")
+## sass:(先安装sass模块，需要在webpack.config里配置，在Vuejs用的时候直接 在styles上加一个lang="sass")
+``` bash
 cnpm i node-sass -D
 cnpm i sass-loader -D
+```
 
-配置loader:
-
+## 配置loader:
+``` bash
 css-loader:
  module:{
 		loaders:[
@@ -111,8 +117,10 @@ css-loader:
 			}
 		]
 	}
+```
 
-css-loader (用插件合并文件):
+## css-loader (用插件合并文件):
+``` bash
 var ExtractTextPlugin=require('extract-text-webpack-plugin');
 module:{
 		loaders:[
@@ -128,8 +136,10 @@ module:{
 plugins:[
 new ExtractTextPlugin('bundle.css')
 ]
+```
 
-vue中css-loader/sass-loader (用插件合并文件):
+## vue中css-loader/sass-loader (用插件合并文件):
+``` bash
 {
 	test:/\.vue$/,
 	loader:'vue-loader',
@@ -146,34 +156,42 @@ vue中css-loader/sass-loader (用插件合并文件):
 		}
 	}
 }
+```
 
-
-加载静态资源(小于1024用base64加载):
+## 加载静态资源(小于1024用base64加载):
+``` bash
 {
 	test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
 	loader:'url-loader?limit=1024'
 }
+```
 
-
-插件plugins:
+## 插件plugins:
+``` bash
 plugins:[
-new ExtractTextPlugin('bundle.css')
+	new ExtractTextPlugin('bundle.css')
 ]
+```
 
 
-.babelrc文件配置:
+## .babelrc文件配置:
+``` bash
 {
 "presets":["es2015"],
 "plugins":["transform-runtime"],
 "comments":false
 }
+```
 
 
 
-打包上线:
+## 打包上线:
+``` bash
 webpack --progress --hide-modules
+```
 
-配置:
+## 配置:
+``` bash
 1). 
       var config={
 	entry:"./entry.js",
@@ -198,3 +216,4 @@ var config={
 	}
 }
 module.exports=config;
+```
