@@ -1,20 +1,3 @@
-
- ### create-react-app
-
->  React.js 
-
-## Build Setup
-
-``` bash
-# install dependencies
-cnpm install
-
-# serve with hot reload at localhost:8080
-cnpm start
-
-# build for production with minification
-npm run build
-```
 # webpack-config.js讲解: http://blog.csdn.net/u011649976/article/details/76736173
 
 
@@ -192,7 +175,7 @@ webpack --progress --hide-modules
 
 ## 配置:
 ``` bash
-> 1). 
+1). 
       var config={
 	entry:"./entry.js",
 	output:{
