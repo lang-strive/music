@@ -68,19 +68,24 @@ babel-runtime:
 cnpm i babel-runtime -D
 ```
 
-babel下载:
+## babel下载:
+``` bash 
 cnpm install babel babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime babel-runtime -D
+```
 
-
-加载静态资源:
-file-loader:
+## 加载静态资源:
+> file-loader:
+``` bash
 cnpm i file-loader
 url-loader:
 cnpm i url-loader
+```
 
-安装webpack和webpack-dev-server
+## 安装webpack和webpack-dev-server
+``` bash
 cnpm i webpack -D
 cnpm i webpack-dev-server -D
+```
 
 webpack-merge:(两个配置文件合并为一个)
 cnpm i webpack-merge -D
