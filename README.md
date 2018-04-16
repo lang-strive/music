@@ -1,36 +1,54 @@
-webpack-config.js½²½â: http://blog.csdn.net/u011649976/article/details/76736173
+
+ create-react-app
+
+>  React.js 
+
+## Build Setup
+
+``` bash
+# install dependencies
+cnpm install
+
+# serve with hot reload at localhost:8080
+cnpm start
+
+# build for production with minification
+npm run build
+```
+# webpack-config.jsè®²è§£: http://blog.csdn.net/u011649976/article/details/76736173
 
 
 npm:
-cnpm install webpack --save-dev		Ö»Ğ´½ø¿ª·¢ÒÀÀµÀïÃæ  	  Ïàµ±ÓÚ -D
-cnpm install webpack --save			Ğ´½øÒÀÀµÀïÃæ,¿ª·¢ºÍÉÏÏß¶¼¿ÉÒÔÓÃ
-cnpm install webpack-dev-server --save-dev	  ¿ªÒ»¸ö·şÎñ,²¢Ğ´½ø¿ª·¢ÒÀÀµ
-
+``` bash
+cnpm install webpack --save-dev		åªå†™è¿›å¼€å‘ä¾èµ–é‡Œé¢  	  ç›¸å½“äº -D
+cnpm install webpack --save			å†™è¿›ä¾èµ–é‡Œé¢,å¼€å‘å’Œä¸Šçº¿éƒ½å¯ä»¥ç”¨
+cnpm install webpack-dev-server --save-dev	  å¼€ä¸€ä¸ªæœåŠ¡,å¹¶å†™è¿›å¼€å‘ä¾èµ–
+```
 
 package.json:
-Éú³É:npm init
-ÔËĞĞ:npm run dev
+ç”Ÿæˆ:npm init
+è¿è¡Œ:npm run dev
 "dev":"webpack-dev-server --host localhost --port 8088 --open --config webpack.config.js"
-ÔËĞĞ:npm run build
+è¿è¡Œ:npm run build
 "build":"webpack --progress --hide-modules --config webpack.prod.config.js"
 
-ÏÂÔØloader:
+ä¸‹è½½loader:
 css-loader:
 cnpm i style-loader css-loader -D 	
-ºÏ²¢css²å¼ş:
+åˆå¹¶cssæ’ä»¶:
 cnpm i extract-text-webpack-plugin -D
-vue:	(vueÉÏÏßÒ²ĞèÒª)
+vue:	(vueä¸Šçº¿ä¹Ÿéœ€è¦)
 cnpm i vue --save		
-vue-loader:(½âÎövue)
+vue-loader:(è§£ævue)
 cnpm i vue-loader -D
-vue-style-loader:(½âÎövueÀïÃæµÄcss)
+vue-style-loader:(è§£ævueé‡Œé¢çš„css)
 cnpm i vue-style-loader -D
-vue-template-compiler:(±àÒëtemplate)
+vue-template-compiler:(ç¼–è¯‘template)
 cnpm i vue-template-compiler -D
-vue-hot-reload-api:(ÈÈ¼ÓÔØ)
+vue-hot-reload-api:(çƒ­åŠ è½½)
 cnpm i vue-hot-reload-api -D
 
-ES6×ª»»ES5
+ES6è½¬æ¢ES5
 babel:
 cnpm i babel -D
 babel-loader:
@@ -44,31 +62,31 @@ cnpm i babel-preset-es2015 -D
 babel-runtime:
 cnpm i babel-runtime -D
 
-babelÏÂÔØ:
+babelä¸‹è½½:
 cnpm install babel babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime babel-runtime -D
 
 
-¼ÓÔØ¾²Ì¬×ÊÔ´:
+åŠ è½½é™æ€èµ„æº:
 file-loader:
 cnpm i file-loader
 url-loader:
 cnpm i url-loader
 
-°²×°webpackºÍwebpack-dev-server
+å®‰è£…webpackå’Œwebpack-dev-server
 cnpm i webpack -D
 cnpm i webpack-dev-server -D
 
-webpack-merge:(Á½¸öÅäÖÃÎÄ¼şºÏ²¢ÎªÒ»¸ö)
+webpack-merge:(ä¸¤ä¸ªé…ç½®æ–‡ä»¶åˆå¹¶ä¸ºä¸€ä¸ª)
 cnpm i webpack-merge -D
 
-html-webpack-plugin:(Éú³ÉhtmlÄ£°å)
+html-webpack-plugin:(ç”Ÿæˆhtmlæ¨¡æ¿)
 cnpm i html-webpack-plugin -D
 
-sass:(ÏÈ°²×°sassÄ£¿é£¬ĞèÒªÔÚwebpack.configÀïÅäÖÃ£¬ÔÚVuejsÓÃµÄÊ±ºòÖ±½Ó ÔÚstylesÉÏ¼ÓÒ»¸ölang="sass")
+sass:(å…ˆå®‰è£…sassæ¨¡å—ï¼Œéœ€è¦åœ¨webpack.configé‡Œé…ç½®ï¼Œåœ¨Vuejsç”¨çš„æ—¶å€™ç›´æ¥ åœ¨stylesä¸ŠåŠ ä¸€ä¸ªlang="sass")
 cnpm i node-sass -D
 cnpm i sass-loader -D
 
-ÅäÖÃloader:
+é…ç½®loader:
 
 css-loader:
  module:{
@@ -83,7 +101,7 @@ css-loader:
 		]
 	}
 
-css-loader (ÓÃ²å¼şºÏ²¢ÎÄ¼ş):
+css-loader (ç”¨æ’ä»¶åˆå¹¶æ–‡ä»¶):
 var ExtractTextPlugin=require('extract-text-webpack-plugin');
 module:{
 		loaders:[
@@ -100,7 +118,7 @@ plugins:[
 new ExtractTextPlugin('bundle.css')
 ]
 
-vueÖĞcss-loader/sass-loader (ÓÃ²å¼şºÏ²¢ÎÄ¼ş):
+vueä¸­css-loader/sass-loader (ç”¨æ’ä»¶åˆå¹¶æ–‡ä»¶):
 {
 	test:/\.vue$/,
 	loader:'vue-loader',
@@ -119,20 +137,20 @@ vueÖĞcss-loader/sass-loader (ÓÃ²å¼şºÏ²¢ÎÄ¼ş):
 }
 
 
-¼ÓÔØ¾²Ì¬×ÊÔ´(Ğ¡ÓÚ1024ÓÃbase64¼ÓÔØ):
+åŠ è½½é™æ€èµ„æº(å°äº1024ç”¨base64åŠ è½½):
 {
 	test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
 	loader:'url-loader?limit=1024'
 }
 
 
-²å¼şplugins:
+æ’ä»¶plugins:
 plugins:[
 new ExtractTextPlugin('bundle.css')
 ]
 
 
-.babelrcÎÄ¼şÅäÖÃ:
+.babelrcæ–‡ä»¶é…ç½®:
 {
 "presets":["es2015"],
 "plugins":["transform-runtime"],
@@ -141,10 +159,10 @@ new ExtractTextPlugin('bundle.css')
 
 
 
-´ò°üÉÏÏß:
+æ‰“åŒ…ä¸Šçº¿:
 webpack --progress --hide-modules
 
-ÅäÖÃ:
+é…ç½®:
 1). 
       var config={
 	entry:"./entry.js",
@@ -156,7 +174,7 @@ webpack --progress --hide-modules
 module.exports=config;
 
 
-2).(´ò°üÂ·¾¶ÎªdistÎÄ¼ş)
+2).(æ‰“åŒ…è·¯å¾„ä¸ºdistæ–‡ä»¶)
       var path=require('path');
 var config={
 	entry:{
